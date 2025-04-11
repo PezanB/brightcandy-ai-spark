@@ -26,7 +26,7 @@ const Navbar = () => {
     <header 
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        isScrolled ? "bg-white/90 dark:bg-brightcandy-dark/90 shadow-md bg-blur" : "bg-transparent"
+        isScrolled ? "bg-white/90 dark:bg-slate-900/90 shadow-md bg-blur" : "bg-transparent"
       )}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -77,7 +77,7 @@ const Navbar = () => {
         }`}
         id="mobile-menu"
       >
-        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white/95 dark:bg-brightcandy-dark/95">
+        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white/95 dark:bg-slate-900/95">
           <a
             href="#about"
             className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-teal-500 dark:hover:text-teal-400"

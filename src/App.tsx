@@ -14,7 +14,7 @@ const queryClient = new QueryClient();
 const App = () => (
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
-      <ThemeProvider defaultTheme="light" storageKey="brightcandy-theme">
+      <ThemeProvider defaultTheme="system" storageKey="brightcandy-theme">
         <TooltipProvider>
           <Toaster />
           <Sonner />

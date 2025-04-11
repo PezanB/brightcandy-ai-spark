@@ -28,13 +28,13 @@
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
+    --background: 222.2 47.4% 11.2%;
     --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
+    --card: 222.2 47.4% 11.2%;
     --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
+    --popover: 222.2 47.4% 11.2%;
     --popover-foreground: 210 40% 98%;
-    --primary: 173 58% 39%;
+    --primary: 173 58% 45%;
     --primary-foreground: 222.2 47.4% 11.2%;
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
@@ -46,17 +46,17 @@
     --destructive-foreground: 210 40% 98%;
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 173 58% 39%;
+    --ring: 173 58% 45%;
   }
 }
 
 @layer components {
   .teal-gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-teal-500 to-teal-700 dark:from-teal-400 dark:to-teal-600;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-teal-500 to-teal-700 dark:from-teal-400 dark:to-teal-500;
   }
 
   .teal-gradient-bg {
-    @apply bg-gradient-to-r from-teal-500 to-teal-700 text-white dark:from-teal-400 dark:to-teal-600;
+    @apply bg-gradient-to-r from-teal-500 to-teal-700 text-white dark:from-teal-400 dark:to-teal-500;
   }
   
   .gradient-text {
