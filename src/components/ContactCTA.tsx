@@ -24,22 +24,35 @@ const ContactCTA = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    // In a real application, you would send this data to your backend
-    console.log("Form submitted:", formData);
-    
-    // Show success toast
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for reaching out. We'll get back to you soon.",
-    });
-    
-    // Reset form
-    setFormData({
-      name: "",
-      email: "",
-      company: "",
-      message: ""
-    });
+    try {
+      // Create the email subject and body
+      const subject = `Contact Form: ${formData.name} from ${formData.company}`;
+      const body = `Name: ${formData.name}\nEmail: ${formData.email}\nCompany: ${formData.company}\n\nMessage:\n${formData.message}`;
+      
+      // Open the user's email client
+      window.location.href = `mailto:info@brightcandy.ai?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      
+      // Show success toast
+      toast({
+        title: "Email Client Opened",
+        description: "Your message has been prepared to send to info@brightcandy.ai",
+      });
+      
+      // Reset form
+      setFormData({
+        name: "",
+        email: "",
+        company: "",
+        message: ""
+      });
+    } catch (error) {
+      console.error("Error opening email client:", error);
+      toast({
+        title: "Error",
+        description: "There was an error opening your email client. Please try again.",
+        variant: "destructive",
+      });
+    }
   };
 
   return (
