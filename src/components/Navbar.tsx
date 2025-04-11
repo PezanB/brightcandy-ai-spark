@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -42,7 +41,6 @@ const Navbar = () => {
           <nav className="hidden md:flex items-center space-x-10">
             <a href="#about" className="text-gray-700 dark:text-gray-300 hover:text-teal-500 dark:hover:text-teal-400 transition-colors">About</a>
             <a href="#benefits" className="text-gray-700 dark:text-gray-300 hover:text-teal-500 dark:hover:text-teal-400 transition-colors">Benefits</a>
-            <a href="#framework" className="text-gray-700 dark:text-gray-300 hover:text-teal-500 dark:hover:text-teal-400 transition-colors">Framework</a>
             <ThemeToggle />
           </nav>
 
@@ -91,13 +89,6 @@ const Navbar = () => {
             onClick={() => setIsOpen(false)}
           >
             Benefits
-          </a>
-          <a
-            href="#framework"
-            className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-teal-500 dark:hover:text-teal-400"
-            onClick={() => setIsOpen(false)}
-          >
-            Framework
           </a>
           <div className="px-3 py-2">
             <Button asChild className="w-full gradient-bg">
