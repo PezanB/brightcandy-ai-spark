@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import { ThemeToggle } from "./ThemeToggle";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -39,9 +40,10 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-10">
-            <a href="#about" className="text-gray-700 hover:text-teal-500 transition-colors">About</a>
-            <a href="#benefits" className="text-gray-700 hover:text-teal-500 transition-colors">Benefits</a>
-            <a href="#framework" className="text-gray-700 hover:text-teal-500 transition-colors">Framework</a>
+            <a href="#about" className="text-gray-700 dark:text-gray-300 hover:text-teal-500 dark:hover:text-teal-400 transition-colors">About</a>
+            <a href="#benefits" className="text-gray-700 dark:text-gray-300 hover:text-teal-500 dark:hover:text-teal-400 transition-colors">Benefits</a>
+            <a href="#framework" className="text-gray-700 dark:text-gray-300 hover:text-teal-500 dark:hover:text-teal-400 transition-colors">Framework</a>
+            <ThemeToggle />
           </nav>
 
           {/* CTA Button */}
@@ -53,9 +55,10 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <div className="flex md:hidden">
+            <ThemeToggle className="mr-2" />
             <button
               type="button"
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700"
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 dark:text-gray-300"
               aria-controls="mobile-menu"
               aria-expanded="false"
               onClick={() => setIsOpen(!isOpen)}
@@ -77,21 +80,21 @@ const Navbar = () => {
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white/95 dark:bg-brightcandy-dark/95">
           <a
             href="#about"
-            className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-teal-500"
+            className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-teal-500 dark:hover:text-teal-400"
             onClick={() => setIsOpen(false)}
           >
             About
           </a>
           <a
             href="#benefits"
-            className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-teal-500"
+            className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-teal-500 dark:hover:text-teal-400"
             onClick={() => setIsOpen(false)}
           >
             Benefits
           </a>
           <a
             href="#framework"
-            className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-teal-500"
+            className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-teal-500 dark:hover:text-teal-400"
             onClick={() => setIsOpen(false)}
           >
             Framework
