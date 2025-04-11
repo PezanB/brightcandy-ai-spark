@@ -20,7 +20,7 @@ const AboutUs = () => {
               We're building a real-time, AI-powered decision layer that transforms how organizations align strategy with action. Our platform doesn't replace your tools—it makes them smarter. By sitting on top of existing enterprise systems, BrightCandy turns strategic KPIs into intelligent daily decisions across teams, in real time.
             </p>
             <p className="text-lg leading-relaxed">
-              Born out of deep enterprise experience in telecom, AI, and operations, our team brings together expertise in optimization, machine learning, and scalable design. We've developed a unique 7-stage analytics framework that bridges silos, boosts workforce productivity, and delivers measurable outcomes.
+              Born out of deep enterprise experience in telecom, AI, and operations, our team brings together expertise in optimization, machine learning, and scalable design. We've developed a unique <span className="text-teal-500 font-bold">7-stage analytics framework</span> that bridges silos, boosts workforce productivity, and delivers measurable outcomes.
             </p>
             <p className="text-lg leading-relaxed font-medium">
               BrightCandy.ai is not just another SaaS tool—it's your enterprise's AI brain.

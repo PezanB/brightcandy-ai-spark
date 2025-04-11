@@ -68,7 +68,7 @@ const Benefits = () => {
         
         <div className="mt-16 text-center">
           <Button asChild variant="outline" className="text-teal-500 border-teal-500 gap-2 hover-scale">
-            <a href="#framework">
+            <a href="#contact">
               Explore Our Framework <ArrowUpRight size={16} />
             </a>
           </Button>
