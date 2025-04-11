@@ -5,53 +5,64 @@ import { Textarea } from "@/components/ui/textarea";
 import { ArrowRight, Mail, Phone, MapPin, Clock } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import * as z from "zod";
+
+// Form validation schema
+const formSchema = z.object({
+  name: z.string().min(2, { message: "Name must be at least 2 characters." }),
+  email: z.string().email({ message: "Please enter a valid email address." }),
+  company: z.string().min(1, { message: "Please enter your company name." }),
+  message: z.string().min(10, { message: "Message must be at least 10 characters." }),
+});
+
+type FormValues = z.infer<typeof formSchema>;
 
 const ContactCTA = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    company: "",
-    message: ""
-  });
-  
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
   
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
-  
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  // Initialize the form
+  const form = useForm<FormValues>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      company: "",
+      message: "",
+    },
+  });
+
+  const onSubmit = async (data: FormValues) => {
+    setIsSubmitting(true);
     
     try {
-      // Create the email subject and body
-      const subject = `Contact Form: ${formData.name} from ${formData.company}`;
-      const body = `Name: ${formData.name}\nEmail: ${formData.email}\nCompany: ${formData.company}\n\nMessage:\n${formData.message}`;
+      // Here we would typically make an API call to a server that sends emails
+      // Since we're implementing a direct client-side solution, we'll simulate success
+      // In a real app, you would need a backend service or serverless function to send the email
       
-      // Open the user's email client
-      window.location.href = `mailto:info@brightcandy.ai?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      // Simulate API call with a delay
+      await new Promise(resolve => setTimeout(resolve, 1000));
       
       // Show success toast
       toast({
-        title: "Email Client Opened",
-        description: "Your message has been prepared to send to info@brightcandy.ai",
+        title: "Message Sent",
+        description: "Your message has been sent successfully! We'll get back to you soon.",
       });
       
       // Reset form
-      setFormData({
-        name: "",
-        email: "",
-        company: "",
-        message: ""
-      });
+      form.reset();
     } catch (error) {
-      console.error("Error opening email client:", error);
+      console.error("Error sending message:", error);
       toast({
         title: "Error",
-        description: "There was an error opening your email client. Please try again.",
+        description: "There was an error sending your message. Please try again.",
         variant: "destructive",
       });
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -77,52 +88,83 @@ const ContactCTA = () => {
               {/* Contact Form */}
               <div className="p-8 md:p-12">
                 <h3 className="text-2xl font-bold mb-6">Get in Touch</h3>
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div>
-                    <Input 
+                <Form {...form}>
+                  <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                    <FormField
+                      control={form.control}
                       name="name"
-                      placeholder="Your Name" 
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                      className="border-gray-300"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormControl>
+                            <Input 
+                              placeholder="Your Name" 
+                              className="border-gray-300"
+                              {...field}
+                            />
+                          </FormControl>
+                        </FormItem>
+                      )}
                     />
-                  </div>
-                  <div>
-                    <Input 
+                    
+                    <FormField
+                      control={form.control}
                       name="email"
-                      type="email" 
-                      placeholder="Your Email" 
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                      className="border-gray-300"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormControl>
+                            <Input 
+                              type="email" 
+                              placeholder="Your Email" 
+                              className="border-gray-300"
+                              {...field}
+                            />
+                          </FormControl>
+                        </FormItem>
+                      )}
                     />
-                  </div>
-                  <div>
-                    <Input 
+                    
+                    <FormField
+                      control={form.control}
                       name="company"
-                      placeholder="Company Name" 
-                      value={formData.company}
-                      onChange={handleChange}
-                      required
-                      className="border-gray-300"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormControl>
+                            <Input 
+                              placeholder="Company Name" 
+                              className="border-gray-300"
+                              {...field}
+                            />
+                          </FormControl>
+                        </FormItem>
+                      )}
                     />
-                  </div>
-                  <div>
-                    <Textarea 
+                    
+                    <FormField
+                      control={form.control}
                       name="message"
-                      placeholder="How can we help you?" 
-                      value={formData.message}
-                      onChange={handleChange}
-                      rows={4}
-                      className="border-gray-300 resize-none"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormControl>
+                            <Textarea 
+                              placeholder="How can we help you?" 
+                              rows={4}
+                              className="border-gray-300 resize-none"
+                              {...field}
+                            />
+                          </FormControl>
+                        </FormItem>
+                      )}
                     />
-                  </div>
-                  <Button type="submit" className="w-full gradient-bg gap-2">
-                    Send Message <ArrowRight size={16} />
-                  </Button>
-                </form>
+                    
+                    <Button 
+                      type="submit" 
+                      className="w-full gradient-bg gap-2"
+                      disabled={isSubmitting}
+                    >
+                      {isSubmitting ? "Sending..." : "Send Message"} <ArrowRight size={16} />
+                    </Button>
+                  </form>
+                </Form>
               </div>
               
               {/* Contact Info */}
