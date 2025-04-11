@@ -1,8 +1,12 @@
-
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles } from "lucide-react";
 
 const Hero = () => {
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact');
+    contactSection?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <section className="min-h-screen flex items-center pt-16 relative overflow-hidden">
       {/* Background Gradients */}
@@ -21,7 +25,11 @@ const Hero = () => {
               Transform how your organization aligns strategy with action. BrightCandy.ai turns your KPIs into intelligent decisions across teams, in real time.
             </p>
             <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
-              <Button size="lg" className="teal-gradient-bg text-lg gap-2 hover-scale">
+              <Button 
+                size="lg" 
+                className="teal-gradient-bg text-lg gap-2 hover-scale"
+                onClick={scrollToContact}
+              >
                 Schedule a Demo <ArrowRight size={18} />
               </Button>
               <Button size="lg" variant="outline" className="text-lg border-teal-500 text-teal-600 gap-2 hover-scale">
