@@ -7,24 +7,24 @@ const Hero = () => {
     <section className="min-h-screen flex items-center pt-16 relative overflow-hidden">
       {/* Background Gradients */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute top-0 -right-40 w-96 h-96 bg-brightcandy-purpleLight/30 rounded-full blur-3xl" />
-        <div className="absolute -left-40 top-40 w-96 h-96 bg-brightcandy-softPink/20 rounded-full blur-3xl" />
+        <div className="absolute top-0 -right-40 w-96 h-96 bg-teal-300/30 rounded-full blur-3xl" />
+        <div className="absolute -left-40 top-40 w-96 h-96 bg-teal-200/20 rounded-full blur-3xl" />
       </div>
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-24">
         <div className="text-center lg:text-left flex flex-col lg:flex-row items-center gap-12">
           <div className="lg:w-1/2 animate-fade-in">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight">
-              The AI-Powered <span className="gradient-text">Decision Layer</span> For Enterprise Excellence
+              The AI-Powered <span className="teal-gradient-text">Decision Layer</span> For Enterprise Excellence
             </h1>
             <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl mx-auto lg:mx-0">
               Transform how your organization aligns strategy with action. BrightCandy.ai turns your KPIs into intelligent decisions across teams, in real time.
             </p>
             <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
-              <Button size="lg" className="gradient-bg text-lg gap-2 hover-scale">
+              <Button size="lg" className="teal-gradient-bg text-lg gap-2 hover-scale">
                 Schedule a Demo <ArrowRight size={18} />
               </Button>
-              <Button size="lg" variant="outline" className="text-lg border-brightcandy-purple text-brightcandy-purple gap-2 hover-scale">
+              <Button size="lg" variant="outline" className="text-lg border-teal-500 text-teal-600 gap-2 hover-scale">
                 Explore Solutions <Sparkles size={18} />
               </Button>
             </div>
