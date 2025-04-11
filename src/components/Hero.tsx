@@ -31,9 +31,9 @@ const Hero = () => {
           </div>
           <div className="lg:w-1/2 relative animate-fade-in" style={{ animationDelay: '0.3s' }}>
             <div className="relative w-full aspect-square max-w-md mx-auto">
-              <div className="absolute inset-0 bg-gradient-to-br from-brightcandy-purple/20 to-brightcandy-blue/20 rounded-3xl transform rotate-3"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-teal-400/20 to-teal-600/20 rounded-3xl transform rotate-3"></div>
               <div className="absolute inset-0 bg-white dark:bg-brightcandy-dark/80 backdrop-blur-sm rounded-3xl shadow-xl border border-white/20 transform -rotate-3 overflow-hidden">
-                <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-brightcandy-purple to-brightcandy-blue"></div>
+                <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-teal-400 to-teal-600"></div>
                 <div className="p-8 flex flex-col h-full">
                   <div className="flex items-center gap-2 mb-4">
                     <div className="w-3 h-3 rounded-full bg-red-400"></div>
@@ -46,17 +46,17 @@ const Hero = () => {
                     <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded w-5/6"></div>
                   </div>
                   <div className="grid grid-cols-2 gap-4 mb-6">
-                    <div className="bg-brightcandy-purple/10 h-20 rounded-lg flex items-center justify-center">
-                      <div className="w-8 h-8 rounded-full bg-brightcandy-purple/30"></div>
+                    <div className="bg-teal-400/10 h-20 rounded-lg flex items-center justify-center">
+                      <div className="w-8 h-8 rounded-full bg-teal-400/30"></div>
                     </div>
-                    <div className="bg-brightcandy-blue/10 h-20 rounded-lg flex items-center justify-center">
-                      <div className="w-8 h-8 rounded-full bg-brightcandy-blue/30"></div>
+                    <div className="bg-teal-600/10 h-20 rounded-lg flex items-center justify-center">
+                      <div className="w-8 h-8 rounded-full bg-teal-600/30"></div>
                     </div>
-                    <div className="bg-brightcandy-softPink/10 h-20 rounded-lg flex items-center justify-center">
-                      <div className="w-8 h-8 rounded-full bg-brightcandy-softPink/30"></div>
+                    <div className="bg-teal-300/10 h-20 rounded-lg flex items-center justify-center">
+                      <div className="w-8 h-8 rounded-full bg-teal-300/30"></div>
                     </div>
-                    <div className="bg-brightcandy-purpleLight/10 h-20 rounded-lg flex items-center justify-center">
-                      <div className="w-8 h-8 rounded-full bg-brightcandy-purpleLight/30"></div>
+                    <div className="bg-teal-200/10 h-20 rounded-lg flex items-center justify-center">
+                      <div className="w-8 h-8 rounded-full bg-teal-200/30"></div>
                     </div>
                   </div>
                   <div className="mt-auto flex justify-end">

@@ -8,32 +8,32 @@ import { Button } from "@/components/ui/button";
 const Benefits = () => {
   const benefits = [
     {
-      icon: <Clock size={24} className="text-brightcandy-purple" />,
+      icon: <Clock size={24} className="text-teal-500" />,
       title: "Real-Time Decision Making",
       description: "Transform data into actionable insights instantly as conditions change."
     },
     {
-      icon: <LineChart size={24} className="text-brightcandy-purple" />,
+      icon: <LineChart size={24} className="text-teal-500" />,
       title: "Strategic KPI Alignment",
       description: "Connect high-level objectives to day-to-day operational decisions."
     },
     {
-      icon: <Shuffle size={24} className="text-brightcandy-purple" />,
+      icon: <Shuffle size={24} className="text-teal-500" />,
       title: "Break Down Silos",
       description: "Foster collaboration across teams with shared insights and goals."
     },
     {
-      icon: <Zap size={24} className="text-brightcandy-purple" />,
+      icon: <Zap size={24} className="text-teal-500" />,
       title: "Boost Workforce Productivity",
       description: "Empower employees with the right information at the right time."
     },
     {
-      icon: <BarChart3 size={24} className="text-brightcandy-purple" />,
+      icon: <BarChart3 size={24} className="text-teal-500" />,
       title: "Measurable Outcomes",
       description: "Track improvements with clear metrics and performance indicators."
     },
     {
-      icon: <Users size={24} className="text-brightcandy-purple" />,
+      icon: <Users size={24} className="text-teal-500" />,
       title: "Enterprise Experience",
       description: "Built by experts in enterprise operations and AI implementation."
     }
@@ -57,7 +57,7 @@ const Benefits = () => {
               key={index} 
               className="bg-white dark:bg-brightcandy-dark/40 p-8 rounded-xl shadow-md border border-gray-100 dark:border-brightcandy-dark/60 hover-scale"
             >
-              <div className="w-12 h-12 bg-brightcandy-purpleLight/20 rounded-lg flex items-center justify-center mb-6">
+              <div className="w-12 h-12 bg-teal-100/60 rounded-lg flex items-center justify-center mb-6">
                 {benefit.icon}
               </div>
               <h3 className="text-xl font-semibold mb-3">{benefit.title}</h3>
@@ -67,7 +67,7 @@ const Benefits = () => {
         </div>
         
         <div className="mt-16 text-center">
-          <Button asChild variant="outline" className="text-brightcandy-purple border-brightcandy-purple gap-2 hover-scale">
+          <Button asChild variant="outline" className="text-teal-500 border-teal-500 gap-2 hover-scale">
             <a href="#framework">
               Explore Our Framework <ArrowUpRight size={16} />
             </a>

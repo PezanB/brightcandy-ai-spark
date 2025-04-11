@@ -39,9 +39,9 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-10">
-            <a href="#about" className="text-gray-700 hover:text-brightcandy-purple transition-colors">About</a>
-            <a href="#benefits" className="text-gray-700 hover:text-brightcandy-purple transition-colors">Benefits</a>
-            <a href="#framework" className="text-gray-700 hover:text-brightcandy-purple transition-colors">Framework</a>
+            <a href="#about" className="text-gray-700 hover:text-teal-500 transition-colors">About</a>
+            <a href="#benefits" className="text-gray-700 hover:text-teal-500 transition-colors">Benefits</a>
+            <a href="#framework" className="text-gray-700 hover:text-teal-500 transition-colors">Framework</a>
           </nav>
 
           {/* CTA Button */}
@@ -77,21 +77,21 @@ const Navbar = () => {
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white/95 dark:bg-brightcandy-dark/95">
           <a
             href="#about"
-            className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-brightcandy-purple"
+            className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-teal-500"
             onClick={() => setIsOpen(false)}
           >
             About
           </a>
           <a
             href="#benefits"
-            className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-brightcandy-purple"
+            className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-teal-500"
             onClick={() => setIsOpen(false)}
           >
             Benefits
           </a>
           <a
             href="#framework"
-            className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-brightcandy-purple"
+            className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-teal-500"
             onClick={() => setIsOpen(false)}
           >
             Framework

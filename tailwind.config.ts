@@ -64,11 +64,11 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				brightcandy: {
-					purple: '#9b87f5',
-					purpleDark: '#7E69AB',
-					purpleLight: '#D6BCFA',
-					blue: '#4A6CF7',
-					softPink: '#FFDEE2',
+					purple: '#14B8A6', // changed from #9b87f5 to teal-500
+					purpleDark: '#0D9488', // changed from #7E69AB to teal-600
+					purpleLight: '#99F6E4', // changed from #D6BCFA to teal-200
+					blue: '#0EA5E9', // keeping blue as is
+					softPink: '#CCFBF1', // changed from #FFDEE2 to teal-100
 					dark: '#1A1F2C',
 					gray: '#8E9196'
 				}

@@ -47,8 +47,8 @@ const Framework = () => {
   return (
     <section id="framework" className="section-padding bg-gray-50 dark:bg-brightcandy-dark/20 relative overflow-hidden">
       {/* Background Elements */}
-      <div className="absolute top-40 -right-20 w-80 h-80 bg-brightcandy-purpleLight/10 rounded-full blur-3xl -z-10" />
-      <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-brightcandy-softPink/10 rounded-full blur-3xl -z-10" />
+      <div className="absolute top-40 -right-20 w-80 h-80 bg-teal-200/20 rounded-full blur-3xl -z-10" />
+      <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-teal-100/20 rounded-full blur-3xl -z-10" />
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -71,8 +71,8 @@ const Framework = () => {
                     className={cn(
                       "w-full text-left p-4 rounded-lg transition-all duration-300 flex items-center gap-4",
                       activeStage === index 
-                        ? "bg-brightcandy-purple text-white" 
-                        : "hover:bg-brightcandy-purpleLight/10"
+                        ? "bg-teal-500 text-white" 
+                        : "hover:bg-teal-100/30"
                     )}
                     onClick={() => setActiveStage(index)}
                   >
@@ -80,7 +80,7 @@ const Framework = () => {
                       "font-mono text-lg font-bold",
                       activeStage === index 
                         ? "text-white" 
-                        : "text-brightcandy-purple"
+                        : "text-teal-500"
                     )}>
                       {stage.number}
                     </span>
@@ -110,8 +110,8 @@ const Framework = () => {
               <div className="aspect-video bg-gray-100 dark:bg-brightcandy-dark/60 rounded-lg mb-8 overflow-hidden">
                 <div className="w-full h-full flex items-center justify-center">
                   <div className="text-center">
-                    <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-brightcandy-purple/20 flex items-center justify-center">
-                      <div className="w-10 h-10 rounded-full bg-brightcandy-purple/40"></div>
+                    <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-teal-500/20 flex items-center justify-center">
+                      <div className="w-10 h-10 rounded-full bg-teal-500/40"></div>
                     </div>
                     <p className="text-gray-400">Interactive visualization for {stages[activeStage].title}</p>
                   </div>
@@ -132,14 +132,14 @@ const Framework = () => {
               <Button 
                 variant="outline" 
                 onClick={() => setActiveStage((prev) => (prev === 0 ? stages.length - 1 : prev - 1))}
-                className="border-brightcandy-purple text-brightcandy-purple"
+                className="border-teal-500 text-teal-500"
               >
                 Previous Stage
               </Button>
               <Button 
                 variant="outline"
                 onClick={() => setActiveStage((prev) => (prev === stages.length - 1 ? 0 : prev + 1))}
-                className="border-brightcandy-purple text-brightcandy-purple"
+                className="border-teal-500 text-teal-500"
               >
                 Next Stage
               </Button>
